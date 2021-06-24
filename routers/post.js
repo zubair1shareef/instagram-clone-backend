@@ -150,7 +150,6 @@ router.delete("/deletepost/:postId",loginCheck,(req,res)=>{
         }
     })
 })
-
 router.post('/createstories',loginCheck,(req,res)=>{
     const{photo}=req.body
     if(!photo){
@@ -184,6 +183,8 @@ router.get('/stories',loginCheck,(req,res)=>{
         console.log(err)
     })
 })
+
+
 
 // router.get("/user/:id",loginCheck,(req,res)=>{
 //     User.findOne({_id:req.params.id})

@@ -9,10 +9,12 @@ const loginCheck=require("../middleware/requireLogin")
 router.get("/user/:userId",loginCheck,(req,res)=>{
     User.findOne({_id:req.params.userId})
     
+    
     .select("-password")
     .then(user=>{
         Post.find({postedBy:req.params.userId})
         .populate('postedBy',"_id name")
+        
         .exec((err,posts)=>{
             if(err){
                 return res.status(422).json({error:err})
@@ -82,6 +84,7 @@ router.post('/search-user',(req,res)=>{
     let pattern =new RegExp("^"+req.body.query)
     User.find({name:{$regex:pattern}})
     .select("_id email name pic")
+    
     .then(user=>{
         res.json({user})
     })

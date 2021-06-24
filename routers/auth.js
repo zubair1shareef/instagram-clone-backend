@@ -49,7 +49,9 @@ router.post("/signin",(req,res)=>{
        return res.status(404).json({error:"enter all the feilds"})
     }
    
-        User.findOne({email:email}).then(foundUser=>{
+        User.findOne({email:email})
+        .populate("followers","name pic")
+        .populate("following","name pic").then(foundUser=>{
             if(!foundUser){
                return res.status(422).json({error:"user not found"})
             }

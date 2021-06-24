@@ -25,6 +25,7 @@ require('./models/stories')
 app.use(require('./routers/auth'))
 require('./models/post')
 app.use(require('./routers/post'))
+app.use(require('./routers/stories'))
 
 require('./models/user')
 app.use(require('./routers/user'))
