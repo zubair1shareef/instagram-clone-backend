@@ -9,7 +9,7 @@ const loginCheck = require("../middleware/requireLogin");
 router.post("/createstories", loginCheck, (req, res) => {
   const { photo } = req.body;
   if (!photo) {
-    res.status(422).json({ error: "fill all the fields" });
+    res.status(422).json({ error: "fill all the required fields" });
   }
   req.user.password = undefined;
   console.log(req.user);
