@@ -16,7 +16,7 @@ mongoose.connection.on("error", (err) => {
 app.use(express.json());
 app.use(morgan("dev"));
 
-//routers
+//routerss
 require("./models/user");
 require("./models/stories");
 app.use(require("./routers/auth"));
@@ -31,7 +31,7 @@ const middleware = (req, res, next) => {
   console.log("middleware is running");
   next();
 };
-app.use(middleware);
+app.use(middleware)
 
 app.use(
   router.get("/", (req, res) => {
