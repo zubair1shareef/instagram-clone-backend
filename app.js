@@ -33,11 +33,8 @@ const middleware = (req, res, next) => {
 };
 app.use(middleware)
 
-//edited
-
 
 app.use(
-
   router.get("/", (req, res) => {
     //res.json("for creating post:/createpost(loginreq)\n view all post: /post")
     res.json({
