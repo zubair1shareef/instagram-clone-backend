@@ -31,7 +31,7 @@ const middleware = (req, res, next) => {
   console.log("middleware is running");
   next();
 };
-app.use(middleware);
+app.use(middleware)
 
 app.use(
   router.get("/", (req, res) => {
