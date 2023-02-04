@@ -37,7 +37,7 @@ app.use(middleware)
 
 
 app.use(
-  //testing
+  //testin
   router.get("/", (req, res) => {
     //res.json("for creating post:/createpost(loginreq)\n view all post: /post")
     res.json({
