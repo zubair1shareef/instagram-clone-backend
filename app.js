@@ -16,7 +16,7 @@ mongoose.connection.on("error", (err) => {
 app.use(express.json());
 app.use(morgan("dev"));
 
-//routers
+//routerss
 require("./models/user");
 require("./models/stories");
 app.use(require("./routers/auth"));
